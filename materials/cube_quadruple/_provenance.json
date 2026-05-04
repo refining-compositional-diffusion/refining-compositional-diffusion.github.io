@@ -1,0 +1,27 @@
+{
+  "1": {
+    "method": "compdiffuser",
+    "steps": 620,
+    "ep_dir": "logs_rollout_compdiffuser/cube-quadruple-play-v0/diffusion/og_cubeQuadruple_o55d_DiTd1024dp12_PadBuf_Ft64_fs4_h160_ovlp56MditD512_H160_T512/eval_mctd_rollout_pl1600000_dql200_multi_chunk_baseline_ph1000_nc10_tgtplan_progress_ratio_keepT_goalSG_platUnlock_goalD80_goalP15_platD60_platE5_100ep/task_01_ep_019"
+  },
+  "2": {
+    "method": "rcd",
+    "steps": 1108,
+    "ep_dir": "logs_rollout_rcd/cube-quadruple-play-v0/diffusion/og_cubeQuadruple_o55d_DiTd1024dp12_PadBuf_Ft64_fs4_h160_ovlp56MditD512_H160_T512/eval_mctd_rollout_pl1600000_dql200_multi_chunk_rcd_ph1000_nc10_tgtplan_progress_ratio_keepT_goalSG_platUnlock_goalD80_goalP15_platD60_platE5_100ep/task_02_ep_009"
+  },
+  "3": {
+    "method": "rcd",
+    "steps": 1047,
+    "ep_dir": "logs_rollout_rcd/cube-quadruple-play-v0/diffusion/og_cubeQuadruple_o55d_DiTd1024dp12_PadBuf_Ft64_fs4_h160_ovlp56MditD512_H160_T512/eval_mctd_rollout_pl1600000_dql200_multi_chunk_rcd_ph1000_nc10_tgtplan_progress_ratio_keepT_goalSG_platUnlock_goalD80_goalP15_platD60_platE5_100ep/task_03_ep_002"
+  },
+  "4": {
+    "method": "rcd",
+    "steps": 1452,
+    "ep_dir": "logs_rollout_rcd/cube-quadruple-play-v0/diffusion/og_cubeQuadruple_o55d_DiTd1024dp12_PadBuf_Ft64_fs4_h160_ovlp56MditD512_H160_T512/eval_mctd_rollout_pl1600000_dql200_multi_chunk_rcd_ph1000_nc10_tgtplan_progress_ratio_keepT_goalSG_platUnlock_goalD80_goalP15_platD60_platE5_100ep/task_04_ep_008"
+  },
+  "5": {
+    "method": "compdiffuser",
+    "steps": 1075,
+    "ep_dir": "logs_rollout_compdiffuser/cube-quadruple-play-v0/diffusion/og_cubeQuadruple_o55d_DiTd1024dp12_PadBuf_Ft64_fs4_h160_ovlp56MditD512_H160_T512/eval_mctd_rollout_pl1600000_dql200_multi_chunk_baseline_ph1000_nc10_tgtplan_progress_ratio_keepT_goalSG_platUnlock_goalD80_goalP15_platD60_platE5_100ep/task_05_ep_010"
+  }
+}

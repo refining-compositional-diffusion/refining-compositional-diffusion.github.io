@@ -1,0 +1,27 @@
+{
+  "1": {
+    "steps": 605,
+    "ep_idx": 4,
+    "run_dir": "logs_rollout_rcd_hires512/antsoccer-arena-stitch-v0/plans/release_og_antSoc_Ar_o17d_DiTd768_PadBuf_Ft64_ts512_fs4_h160_ovlp56MditD384_H160_T512_LimitsNormalizer_b1_condFalse/0/260503-194221-284-nm-100-ems5k-ncp5-interleave-evSd0-pkl-st0-sr69"
+  },
+  "2": {
+    "steps": 686,
+    "ep_idx": 39,
+    "run_dir": "logs_rollout_rcd_hires512/antsoccer-arena-stitch-v0/plans/release_og_antSoc_Ar_o17d_DiTd768_PadBuf_Ft64_ts512_fs4_h160_ovlp56MditD384_H160_T512_LimitsNormalizer_b1_condFalse/0/260503-194221-284-nm-100-ems5k-ncp5-interleave-evSd0-pkl-st0-sr69"
+  },
+  "3": {
+    "steps": 919,
+    "ep_idx": 57,
+    "run_dir": "logs_rollout_rcd_hires512/antsoccer-arena-stitch-v0/plans/release_og_antSoc_Ar_o17d_DiTd768_PadBuf_Ft64_ts512_fs4_h160_ovlp56MditD384_H160_T512_LimitsNormalizer_b1_condFalse/0/260503-194221-284-nm-100-ems5k-ncp5-interleave-evSd0-pkl-st0-sr69"
+  },
+  "4": {
+    "steps": 733,
+    "ep_idx": 76,
+    "run_dir": "logs_rollout_rcd_hires512/antsoccer-arena-stitch-v0/plans/release_og_antSoc_Ar_o17d_DiTd768_PadBuf_Ft64_ts512_fs4_h160_ovlp56MditD384_H160_T512_LimitsNormalizer_b1_condFalse/0/260503-194221-284-nm-100-ems5k-ncp5-interleave-evSd0-pkl-st0-sr69"
+  },
+  "5": {
+    "steps": 1016,
+    "ep_idx": 86,
+    "run_dir": "logs_rollout_rcd_hires512/antsoccer-arena-stitch-v0/plans/release_og_antSoc_Ar_o17d_DiTd768_PadBuf_Ft64_ts512_fs4_h160_ovlp56MditD384_H160_T512_LimitsNormalizer_b1_condFalse/0/260503-194221-284-nm-100-ems5k-ncp5-interleave-evSd0-pkl-st0-sr69"
+  }
+}

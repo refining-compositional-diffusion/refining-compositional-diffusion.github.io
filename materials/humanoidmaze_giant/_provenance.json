@@ -1,0 +1,27 @@
+{
+  "1": {
+    "ep_idx": 14,
+    "n_frames": 2567,
+    "src": "humanoidmaze-giant-stitch-v0/plans/release_og_humM_Gi_o2d_Cd_Stgl_PadBuf_Ft64_ts1k_h336_ovlp128_ovdm5_ts512_bs192_bd128_td96_drop02_H336_T512_LimitsNormalizer_b1_condFalse/0/260411-024118-473-nm-100-ems8k-ncp11-interleave-evSd0-pkl-st0-sr62/10/ep14_True.mp4"
+  },
+  "2": {
+    "ep_idx": 30,
+    "n_frames": 3602,
+    "src": "humanoidmaze-giant-stitch-v0/plans/release_og_humM_Gi_o2d_Cd_Stgl_PadBuf_Ft64_ts1k_h336_ovlp128_ovdm5_ts512_bs192_bd128_td96_drop02_H336_T512_LimitsNormalizer_b1_condFalse/0/260411-024118-473-nm-100-ems8k-ncp11-interleave-evSd0-pkl-st0-sr62/30/ep30_True.mp4"
+  },
+  "3": {
+    "ep_idx": 52,
+    "n_frames": 3178,
+    "src": "humanoidmaze-giant-stitch-v0/plans/release_og_humM_Gi_o2d_Cd_Stgl_PadBuf_Ft64_ts1k_h336_ovlp128_ovdm5_ts512_bs192_bd128_td96_drop02_H336_T512_LimitsNormalizer_b1_condFalse/0/260411-024118-473-nm-100-ems8k-ncp11-interleave-evSd0-pkl-st0-sr62/50/ep52_True.mp4"
+  },
+  "4": {
+    "ep_idx": 70,
+    "n_frames": 2971,
+    "src": "humanoidmaze-giant-stitch-v0/plans/release_og_humM_Gi_o2d_Cd_Stgl_PadBuf_Ft64_ts1k_h336_ovlp128_ovdm5_ts512_bs192_bd128_td96_drop02_H336_T512_LimitsNormalizer_b1_condFalse/0/260411-024118-473-nm-100-ems8k-ncp11-interleave-evSd0-pkl-st0-sr62/70/ep70_True.mp4"
+  },
+  "5": {
+    "ep_idx": 88,
+    "n_frames": 3249,
+    "src": "humanoidmaze-giant-stitch-v0/plans/release_og_humM_Gi_o2d_Cd_Stgl_PadBuf_Ft64_ts1k_h336_ovlp128_ovdm5_ts512_bs192_bd128_td96_drop02_H336_T512_LimitsNormalizer_b1_condFalse/0/260411-024118-473-nm-100-ems8k-ncp11-interleave-evSd0-pkl-st0-sr62/80/ep88_True.mp4"
+  }
+}

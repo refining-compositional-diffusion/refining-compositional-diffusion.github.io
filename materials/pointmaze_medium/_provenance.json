@@ -1,0 +1,32 @@
+{
+  "1": {
+    "steps": 317,
+    "ep_idx": 5,
+    "is_suc": true,
+    "run_dir": "logs_rollout_rcd_hires512/pointmaze-medium-stitch-v0/plans/release_og_pntM_Me_o2d_Cd_Stgl_PadBuf_Ft64_ts512_H160_T1000_LimitsNormalizer_b1_condFalse/0/260503-194013-165-nm-100-ems1k-ncp3-interleave-evSd0-pkl-st0-sr100"
+  },
+  "2": {
+    "steps": 315,
+    "ep_idx": 20,
+    "is_suc": true,
+    "run_dir": "logs_rollout_rcd_hires512/pointmaze-medium-stitch-v0/plans/release_og_pntM_Me_o2d_Cd_Stgl_PadBuf_Ft64_ts512_H160_T1000_LimitsNormalizer_b1_condFalse/0/260503-194013-165-nm-100-ems1k-ncp3-interleave-evSd0-pkl-st0-sr100"
+  },
+  "3": {
+    "steps": 273,
+    "ep_idx": 47,
+    "is_suc": true,
+    "run_dir": "logs_rollout_rcd_hires512/pointmaze-medium-stitch-v0/plans/release_og_pntM_Me_o2d_Cd_Stgl_PadBuf_Ft64_ts512_H160_T1000_LimitsNormalizer_b1_condFalse/0/260503-194013-165-nm-100-ems1k-ncp3-interleave-evSd0-pkl-st0-sr100"
+  },
+  "4": {
+    "steps": 321,
+    "ep_idx": 62,
+    "is_suc": true,
+    "run_dir": "logs_rollout_rcd_hires512/pointmaze-medium-stitch-v0/plans/release_og_pntM_Me_o2d_Cd_Stgl_PadBuf_Ft64_ts512_H160_T1000_LimitsNormalizer_b1_condFalse/0/260503-194013-165-nm-100-ems1k-ncp3-interleave-evSd0-pkl-st0-sr100"
+  },
+  "5": {
+    "steps": 272,
+    "ep_idx": 81,
+    "is_suc": true,
+    "run_dir": "logs_rollout_rcd_hires512/pointmaze-medium-stitch-v0/plans/release_og_pntM_Me_o2d_Cd_Stgl_PadBuf_Ft64_ts512_H160_T1000_LimitsNormalizer_b1_condFalse/0/260503-194013-165-nm-100-ems1k-ncp3-interleave-evSd0-pkl-st0-sr100"
+  }
+}

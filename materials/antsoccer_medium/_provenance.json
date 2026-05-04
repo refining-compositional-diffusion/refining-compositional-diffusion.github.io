@@ -1,0 +1,32 @@
+{
+  "1": {
+    "steps": 1243,
+    "ep_idx": 2,
+    "is_suc": true,
+    "run_dir": "logs_rollout_rcd_v2/antsoccer-medium-stitch-v0/plans/release_og_antSoc_Me_o17d_DiTd768_PadBuf_Ft64_MaxOriPlan200_ts512_fs4_h160_ovlp56MditD384_H160_T512_LimitsNormalizer_b1_condFalse/0/260411-043257-073-nm-100-ems5k-ncp6-interleave-evSd0-pkl-st0-sr10"
+  },
+  "2": {
+    "steps": 1500,
+    "ep_idx": 39,
+    "is_suc": false,
+    "run_dir": "logs_rollout_rcd/antsoccer-medium-stitch-v0/plans/release_og_antSoc_Me_o17d_DiTd768_PadBuf_Ft64_MaxOriPlan200_ts512_fs4_h160_ovlp56MditD384_H160_T512_LimitsNormalizer_b1_condFalse/0/260405-155028-204-nm-100-ems5k-ncp6-interleave-evSd0-pkl-st0-sr12"
+  },
+  "3": {
+    "steps": 1500,
+    "ep_idx": 59,
+    "is_suc": false,
+    "run_dir": "logs_rollout_rcd/antsoccer-medium-stitch-v0/plans/release_og_antSoc_Me_o17d_DiTd768_PadBuf_Ft64_MaxOriPlan200_ts512_fs4_h160_ovlp56MditD384_H160_T512_LimitsNormalizer_b1_condFalse/0/260405-155028-204-nm-100-ems5k-ncp6-interleave-evSd0-pkl-st0-sr12"
+  },
+  "4": {
+    "steps": 1964,
+    "ep_idx": 74,
+    "is_suc": true,
+    "run_dir": "logs_rollout_rcd/antsoccer-medium-stitch-v0/plans/release_og_antSoc_Me_o17d_DiTd768_PadBuf_Ft64_MaxOriPlan200_ts512_fs4_h160_ovlp56MditD384_H160_T512_LimitsNormalizer_b1_condFalse/0/260405-155028-204-nm-100-ems5k-ncp6-interleave-evSd0-pkl-st0-sr12"
+  },
+  "5": {
+    "steps": 1814,
+    "ep_idx": 98,
+    "is_suc": true,
+    "run_dir": "logs_rollout_rcd/antsoccer-medium-stitch-v0/plans/release_og_antSoc_Me_o17d_DiTd768_PadBuf_Ft64_MaxOriPlan200_ts512_fs4_h160_ovlp56MditD384_H160_T512_LimitsNormalizer_b1_condFalse/0/260405-155028-204-nm-100-ems5k-ncp6-interleave-evSd0-pkl-st0-sr12"
+  }
+}

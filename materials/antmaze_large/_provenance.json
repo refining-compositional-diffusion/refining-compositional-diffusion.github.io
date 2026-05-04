@@ -1,0 +1,27 @@
+{
+  "1": {
+    "steps": 753,
+    "ep_idx": 18,
+    "run_dir": "logs_rollout_rcd_hires512/antmaze-large-stitch-v0/plans/release_og_antM_Lg_o2d_Cd_Stgl_PadBuf_Ft64_ts512_H160_T512_LimitsNormalizer_b1_condFalse/0/260503-202230-572-nm-100-ems1k-ncp6-interleave-evSd0-pkl-st0-sr84"
+  },
+  "2": {
+    "steps": 700,
+    "ep_idx": 24,
+    "run_dir": "logs_rollout_rcd_hires512/antmaze-large-stitch-v0/plans/release_og_antM_Lg_o2d_Cd_Stgl_PadBuf_Ft64_ts512_H160_T512_LimitsNormalizer_b1_condFalse/0/260503-202230-572-nm-100-ems1k-ncp6-interleave-evSd0-pkl-st0-sr84"
+  },
+  "3": {
+    "steps": 656,
+    "ep_idx": 57,
+    "run_dir": "logs_rollout_rcd_hires512/antmaze-large-stitch-v0/plans/release_og_antM_Lg_o2d_Cd_Stgl_PadBuf_Ft64_ts512_H160_T512_LimitsNormalizer_b1_condFalse/0/260503-202230-572-nm-100-ems1k-ncp6-interleave-evSd0-pkl-st0-sr84"
+  },
+  "4": {
+    "steps": 644,
+    "ep_idx": 76,
+    "run_dir": "logs_rollout_rcd_hires512/antmaze-large-stitch-v0/plans/release_og_antM_Lg_o2d_Cd_Stgl_PadBuf_Ft64_ts512_H160_T512_LimitsNormalizer_b1_condFalse/0/260503-202230-572-nm-100-ems1k-ncp6-interleave-evSd0-pkl-st0-sr84"
+  },
+  "5": {
+    "steps": 638,
+    "ep_idx": 86,
+    "run_dir": "logs_rollout_rcd_hires512/antmaze-large-stitch-v0/plans/release_og_antM_Lg_o2d_Cd_Stgl_PadBuf_Ft64_ts512_H160_T512_LimitsNormalizer_b1_condFalse/0/260503-202230-572-nm-100-ems1k-ncp6-interleave-evSd0-pkl-st0-sr84"
+  }
+}

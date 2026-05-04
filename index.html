@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Project page for Refining Compositional Diffusion for Reliable Long-Horizon Planning.">
+  <meta name="keywords" content="Diffusion Models, Compositional Planning, Long-Horizon Decision Making, Trajectory Stitching, Training-Free Guidance">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refining Compositional Diffusion for Reliable Long-Horizon Planning</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/index_compdfu.css">
+  <link rel="stylesheet" href="bootstrap-grid.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="load-mathjax.js" async></script>
+
+  <link rel="stylesheet" href="./static/css/splide.min.css">
+  <script src="./static/js/splide.min.js"></script>
+
+  <style>
+    .rcd_task_row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 8px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .rcd_task_row > div {
+      flex: 1 1 0;
+      min-width: 0;
+      text-align: center;
+    }
+    .rcd_task_row video {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 6px;
+      background: #000;
+    }
+    .rcd_task_row .task_caption {
+      font-size: 14px;
+      margin-top: 4px;
+      color: #555;
+    }
+    .rcd_variant_select_row {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 10px 16px;
+      border: 1.5px solid #9bc4e7;
+      border-radius: 8px;
+      background: #e3f1fb;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .rcd_variant_select_row .label {
+      font-weight: 600;
+      margin: 0;
+      font-size: 16px;
+    }
+    .rcd_variant_select_row .select select {
+      font-size: 15px;
+    }
+    .rcd_section_caption {
+      font-size: 18px;
+      margin-top: 14px;
+      color: #333;
+    }
+    .rcd_placeholder {
+      width: 100%;
+      max-width: 260px;
+      aspect-ratio: 1 / 1;
+      background: repeating-linear-gradient(45deg, #eee, #eee 8px, #f6f6f6 8px, #f6f6f6 16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 13px;
+      border-radius: 6px;
+    }
+    .rcd_splide .cpdfu_base_row {
+      gap: 18px;
+      margin-left: 50px;
+      margin-right: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .rcd_splide .cpdfu_base_row > div {
+      text-align: center;
+      width: 270px;
+      min-width: 220px;
+    }
+    .rcd_splide .cpdfu_base_row video {
+      width: 100%;
+      max-width: 270px;
+      border-radius: 6px;
+      background: #000;
+    }
+    .rcd_splide .task_caption {
+      font-size: 14px;
+      margin-top: 6px;
+      color: #555;
+    }
+    .rcd_splide .splide__arrow {
+      background: #1d4f9c;
+      opacity: 0.85;
+    }
+    .rcd_splide .splide__arrow svg {
+      fill: #fff;
+    }
+    .rcd_splide .splide__pagination__page.is-active {
+      background: #1d4f9c;
+    }
+    .rcd_splide {
+      padding-bottom: 26px;
+    }
+    .rcd_splide .splide__pagination {
+      bottom: -2px;
+    }
+    .rcd_splide .splide__pagination__page {
+      margin: 0 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero" style="background-color: #ebf0f1;">
+  <div class="hero-body hero-body-dec19">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title publication-title" style="font-size: 44px;">
+            Refining Compositional Diffusion for <br> Reliable Long-Horizon Planning
+          </h1>
+
+          <div class="is-size-5 publication-authors" style="margin-top: 6pt;">
+            Under Review
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="padding-top: 1rem; padding-bottom: 1rem;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div style="border-left: 4px solid #1d4f9c; background: #f5f8fc;
+                    padding: 16px 22px; border-radius: 4px;">
+          <p style="margin: 0; font-size: 22px; line-height: 1.5; color: #222;">
+            <span style="font-weight: 700; letter-spacing: 0.04em; color: #1d4f9c;">
+              TL;DR:&nbsp;</span>
+            Want to make a compositional diffusion planner reliable on long-horizon
+            tasks? <b class="rcd_brand">Try RCD</b>
+            (<b>R</b>efining <b>C</b>ompositional <b>D</b>iffusion).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+
+<section class="section" id="motivation_anim">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">Motivation: The Mode-Averaging Problem</h2>
+      <p class="has-text-justified" style="font-size: 18px; color: #444;">
+        We visualize the entire denoising process on
+        <code>AntMaze-Giant-Stitch</code>: starting from pure noise, both
+        methods iteratively refine 9 overlapping local plans into a single
+        composed trajectory from start
+        <img src="materials/0-method/mark_start_crop.png"
+             style="height: 1em; vertical-align: -0.18em;">
+        to goal
+        <img src="materials/0-method/mark_goal_crop.png"
+             style="height: 1em; vertical-align: -0.18em;">.
+        Each task panel shows the planner's chosen plan for 20 different
+        test-time problem instances (varying start states with the same goal).
+        Plans that pass through walls are coloured
+        <b style="color:#d24d4d">red</b> (mode-averaging artifacts); plans
+        that respect the maze are coloured <b style="color:#2ca25f">green</b>.
+        CompDiffuser frequently produces mode-averaged trajectories in
+        low-density regions, leaving plans that cut through walls, while
+        <b class="rcd_brand">RCD</b> steers each denoising step toward
+        high-density modes and recovers globally coherent paths.
+      </p>
+
+      <div style="text-align: center; margin-top: 12px;">
+      <div class="rcd_variant_select_row">
+        <span class="label">Task:</span>
+        <div class="select">
+          <select id="motiv_select_task" onchange="motivUpdate()">
+            <option value="0" selected>Task 1</option>
+            <option value="1">Task 2</option>
+            <option value="2">Task 3</option>
+            <option value="3">Task 4</option>
+            <option value="4">Task 5</option>
+          </select>
+        </div>
+      </div>
+      </div>
+
+      <div class="has-text-centered">
+        <video id="motiv_anim_video" playsinline autoplay muted loop
+               style="width: 100%; max-width: 920px; border-radius: 6px;
+                      background: #fff;">
+          <source id="motiv_anim_src" src="materials/motivation_anim/task0.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+function motivUpdate() {
+  const sel = document.getElementById("motiv_select_task");
+  const tid = sel.value;
+  const v = document.getElementById("motiv_anim_video");
+  const s = document.getElementById("motiv_anim_src");
+  s.src = "materials/motivation_anim/task" + tid + ".mp4?v=" + Date.now();
+  v.load();
+  v.play().catch(() => {});
+}
+</script>
+
+
+
+
+
+
+
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-4">Key Insight: Self-Reconstruction Error as a Density Proxy</h2>
+        <div class="content has-text-justified div_abs_text">
+          <p>
+            A pretrained diffusion model already provides an intrinsic density signal.
+            Samples in <b>high-density regions reconstruct faithfully</b> through a noise-denoise
+            cycle, while <b>mode-averaged samples in low-density regions do not</b>.
+            This <em>self-reconstruction error</em> serves as a training-free density proxy
+            for compositional guidance, computed using only the local diffusion model itself.
+          </p>
+          <p>
+            Combined with an <em>overlap consistency</em> term that penalizes score disagreement
+            at segment boundaries, RCD steers denoising toward a tilted distribution that
+            concentrates on high-density, globally coherent plans, mitigating mode-averaging
+            without the population-based resampling and ranking overhead of prior search-based
+            approaches.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<hr>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <figure>
+          <img src="materials/0-method/overview_rcd.png" style="width: 100%;">
+          <p class="caption" style="font-size: 18px; margin-top: 10px;">
+            <b>Overview of RCD, contrasted with CompDiffuser and CDGS.</b>
+            Trajectories are planned from start
+            <img src="materials/0-method/mark_start_crop.png"
+                 style="height: 1em; vertical-align: -0.18em;">
+            to goal
+            <img src="materials/0-method/mark_goal_crop.png"
+                 style="height: 1em; vertical-align: -0.18em;">
+            over a transition distribution
+            <img src="materials/0-method/density_icon.png"
+                 style="height: 1em; vertical-align: -0.18em;">.
+            <b>(a) CompDiffuser</b> composes overlapping segments via bidirectional
+            conditioning and autoregressive denoising, but produces mode-averaged
+            trajectories in low-density regions when local distributions are multimodal.
+            <b>(b) CDGS</b> mitigates this through population-based search and pruning
+            at substantial inference cost.
+            <b>(c) <span class="rcd_brand">RCD</span></b> iteratively refines each
+            denoising step toward high-density, globally coherent plans using the
+            <em>self-reconstruction error</em> (a differentiable density proxy) and an
+            <em>overlap consistency</em> term.
+          </p>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<hr>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-3 has-text-centered">Toy Experiment</h2>
+      <div class="columns is-vcentered" style="margin-top: 8px;">
+        <div class="column is-half">
+          <p class="has-text-justified" style="font-size: 18px; color: #444;">
+            We construct a controlled $L$-position toy task whose underlying
+            distribution is anchored at the two endpoints
+            ($x_1\!=\!0$, $x_L\!=\!0$) and bimodal at the interior positions
+            (modes at $+1$ and $-1$). <b>The training data contains only short
+            length-$3$ chunks; no full long-horizon trajectory is ever
+            seen.</b> At test time, the planner must compose these short chunks
+            into a long-horizon trajectory without averaging across the two
+            incompatible interior modes.
+          </p>
+          <p class="has-text-justified" style="font-size: 18px; color: #444; margin-top: 14px;">
+            Three chunk types appear in the training data:
+            <b style="color:#7e95c9;">start</b> chunks run from $x_1\!=\!0$
+            to either the $+1$ or $-1$ interior mode;
+            <b style="color:#3aa05a;">overlap</b> (bridge) chunks preserve a
+            single interior mode through three consecutive positions; and
+            <b style="color:#d24d4d;">end</b> chunks land back at
+            $x_L\!=\!0$ from a single interior mode. Crucially, no individual
+            chunk ever crosses modes; mode-coherence across the full
+            trajectory has to emerge from the compositional planner.
+          </p>
+        </div>
+        <div class="column is-half has-text-centered">
+          <img id="toy_training_data_img"
+               src="materials/toy_panels/toy_training_data.png"
+               style="max-width: 80%; width: 80%;">
+          <p class="caption" style="font-size: 18px; margin-top: 10px; text-align: center;">
+            <b>Training data.</b>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="padding-top: 0;" id="toy_interactive">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h3 class="title is-4">CompDiffuser vs. RCD</h3>
+      <p class="has-text-justified" style="font-size: 18px; color: #444;">
+        Pick a horizon $L$ and an RCD guidance weight $w$. The left panel always shows
+        the CompDiffuser baseline (no guidance) at the chosen $L$; the right panel shows
+        RCD at the chosen $(L, w)$. <b style="color:#2ca25f">Green</b> trajectories are
+        valid (within the high-density mode bands at every position and mode-consistent
+        across the interior); <b style="color:#d24d4d">red</b> trajectories are invalid
+        (mode-averaged or off-mode).
+      </p>
+
+      <div style="text-align: center; margin-top: 14px;">
+      <div class="rcd_variant_select_row">
+        <span class="label">Horizon $L$:</span>
+        <div class="select">
+          <select id="toy_select_L" onchange="toyUpdate()">
+            <option value="8">8</option>
+            <option value="12" selected>12</option>
+            <option value="16">16</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+        <span class="label" style="margin-left: 14px;">RCD guidance weight $w$:</span>
+        <div class="select">
+          <select id="toy_select_lam" onchange="toyUpdate()">
+            <option value="0p5">0.5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="5" selected>5</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+      </div>
+      </div>
+
+      <div style="display:flex; flex-direction:row; gap:14px; justify-content:center;
+                  align-items:flex-start; margin-top: 8px; flex-wrap: wrap;">
+        <div style="flex: 1 1 380px; min-width: 320px; max-width: 560px; text-align:center;">
+          <p style="font-weight:600; font-size: 30px; color: #d24d4d; margin-bottom: 6px;">
+            CompDiffuser
+          </p>
+          <video id="toy_panel_base" playsinline autoplay muted loop
+                 style="width: 100%; border: 1px solid #ddd; border-radius: 6px;">
+            <source src="materials/toy_panels/base_L12.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div style="flex: 1 1 380px; min-width: 320px; max-width: 560px; text-align:center;">
+          <p style="font-weight:600; font-size: 30px; color: #2ca25f; margin-bottom: 6px;">
+            <span class="rcd_brand">RCD</span>
+          </p>
+          <video id="toy_panel_rcd" playsinline autoplay muted loop
+                 style="width: 100%; border: 1px solid #ddd; border-radius: 6px;">
+            <source src="materials/toy_panels/rcd_L12_lam5.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <p class="rcd_section_caption">
+        <b>What to look for.</b> As $L$ grows, the CompDiffuser panel collapses to
+        the mode-averaged centre band (<span style="color:#d24d4d; font-weight:600;">red</span>),
+        while RCD with sufficient $w$ recovers the two true modes
+        (<span style="color:#2ca25f; font-weight:600;">green</span>).
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+<hr>
+
+
+<!-- ============================== Qualitative Results ============================== -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-3 has-text-centered">Qualitative Results in OGBench</h2>
+    </div>
+  </div>
+</section>
+
+<!-- PointMaze -->
+<section class="section" id="env_pointmaze">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">OGBench PointMaze</h2>
+      <div class="rcd_variant_select_row">
+        <span class="label">Task:</span>
+        <div class="select">
+          <select onchange="rcdSetVariant('pointmaze', this.value)">
+            <option value="medium">Medium Stitch</option>
+            <option value="large">Large Stitch</option>
+            <option value="giant" selected>Giant Stitch</option>
+          </select>
+        </div>
+      </div>
+      <div id="splide-pointmaze" class="splide rcd_splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="pointmaze-task1" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 1</p>
+                </div>
+                <div>
+                  <video id="pointmaze-task2" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 2</p>
+                </div>
+                <div>
+                  <video id="pointmaze-task3" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 3</p>
+                </div>
+        </div>
+      </li>
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="pointmaze-task4" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 4</p>
+                </div>
+                <div>
+                  <video id="pointmaze-task5" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 5</p>
+                </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- AntMaze (state) -->
+<section class="section" id="env_antmaze">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">OGBench AntMaze</h2>
+      <div class="rcd_variant_select_row">
+        <span class="label">Task:</span>
+        <div class="select">
+          <select onchange="rcdSetVariant('antmaze', this.value)">
+            <option value="medium">Medium Stitch</option>
+            <option value="large">Large Stitch</option>
+            <option value="giant" selected>Giant Stitch</option>
+          </select>
+        </div>
+      </div>
+      <div id="splide-antmaze" class="splide rcd_splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="antmaze-task1" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 1</p>
+                </div>
+                <div>
+                  <video id="antmaze-task2" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 2</p>
+                </div>
+                <div>
+                  <video id="antmaze-task3" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 3</p>
+                </div>
+        </div>
+      </li>
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="antmaze-task4" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 4</p>
+                </div>
+                <div>
+                  <video id="antmaze-task5" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 5</p>
+                </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+<hr>
+
+<!-- HumanoidMaze -->
+<section class="section" id="env_humanoid">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">OGBench HumanoidMaze</h2>
+      <div class="rcd_variant_select_row">
+        <span class="label">Task:</span>
+        <div class="select">
+          <select onchange="rcdSetVariant('humanoidmaze', this.value)">
+            <option value="medium">Medium Stitch</option>
+            <option value="large">Large Stitch</option>
+            <option value="giant" selected>Giant Stitch</option>
+          </select>
+        </div>
+      </div>
+      <div id="splide-humanoidmaze" class="splide rcd_splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="humanoidmaze-task1" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 1</p>
+                </div>
+                <div>
+                  <video id="humanoidmaze-task2" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 2</p>
+                </div>
+                <div>
+                  <video id="humanoidmaze-task3" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 3</p>
+                </div>
+        </div>
+      </li>
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="humanoidmaze-task4" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 4</p>
+                </div>
+                <div>
+                  <video id="humanoidmaze-task5" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 5</p>
+                </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<hr>
+
+<!-- AntSoccer -->
+<section class="section" id="env_antsoccer">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">OGBench AntSoccer (Object Manipulation)</h2>
+      <div class="rcd_variant_select_row">
+        <span class="label">Task:</span>
+        <div class="select">
+          <select onchange="rcdSetVariant('antsoccer', this.value)">
+            <option value="medium" selected>Medium Stitch</option>
+            <option value="arena">Arena Stitch</option>
+          </select>
+        </div>
+      </div>
+      <div id="splide-antsoccer" class="splide rcd_splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="antsoccer-task1" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 1</p>
+                </div>
+                <div>
+                  <video id="antsoccer-task2" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 2</p>
+                </div>
+                <div>
+                  <video id="antsoccer-task3" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 3</p>
+                </div>
+        </div>
+      </li>
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="antsoccer-task4" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 4</p>
+                </div>
+                <div>
+                  <video id="antsoccer-task5" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 5</p>
+                </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+<hr>
+
+<!-- Visual AntMaze -->
+<section class="section" id="env_visual_antmaze">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">OGBench Visual AntMaze (Pixel Observations)</h2>
+      <div class="rcd_variant_select_row">
+        <span class="label">Task:</span>
+        <div class="select">
+          <select onchange="rcdSetVariant('visual_antmaze', this.value)">
+            <option value="medium" selected>Medium Stitch</option>
+            <option value="large">Large Stitch</option>
+          </select>
+        </div>
+      </div>
+      <div id="splide-visual_antmaze" class="splide rcd_splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="visual_antmaze-task1" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 1</p>
+                </div>
+                <div>
+                  <video id="visual_antmaze-task2" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 2</p>
+                </div>
+                <div>
+                  <video id="visual_antmaze-task3" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 3</p>
+                </div>
+        </div>
+      </li>
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="visual_antmaze-task4" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 4</p>
+                </div>
+                <div>
+                  <video id="visual_antmaze-task5" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 5</p>
+                </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+<hr>
+
+<!-- Cube Manipulation -->
+<section class="section" id="env_cube">
+  <div class="container is-max-desktop">
+    <div class="column is-full-width">
+      <h2 class="title is-4">OGBench Cube Manipulation</h2>
+      <div class="rcd_variant_select_row">
+        <span class="label">Task:</span>
+        <div class="select">
+          <select onchange="rcdSetVariant('cube', this.value)">
+            <option value="single">Single</option>
+            <option value="double">Double</option>
+            <option value="triple" selected>Triple</option>
+            <option value="quadruple">Quadruple</option>
+          </select>
+        </div>
+      </div>
+      <div id="splide-cube" class="splide rcd_splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="cube-task1" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 1</p>
+                </div>
+                <div>
+                  <video id="cube-task2" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 2</p>
+                </div>
+                <div>
+                  <video id="cube-task3" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 3</p>
+                </div>
+        </div>
+      </li>
+      <li class="splide__slide splide_cpdfu">
+        <div class="cpdfu_base_row">
+                <div>
+                  <video id="cube-task4" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 4</p>
+                </div>
+                <div>
+                  <video id="cube-task5" playsinline autoplay muted loop>
+                    <source type="video/mp4">
+                  </video>
+                  <p class="task_caption">Task 5</p>
+                </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Conclusion</h2>
+        <div class="content has-text-justified div_abs_text">
+          <p>
+            We presented <b class="rcd_brand">RCD</b>, a training-free guidance method that
+            addresses the mode-averaging problem in compositional diffusion planning. By combining a
+            self-reconstruction density proxy with an overlap consistency term, RCD steers
+            compositional sampling toward high-density, globally coherent plans without any extra
+            training, architectural change, or population-based search. Across long-horizon tasks
+            in OGBench, including locomotion, manipulation, and pixel-based observation environments,
+            RCD consistently outperforms prior compositional and search-based methods while remaining
+            plug-and-play and broadly applicable to existing diffusion planners.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <div class="content">
+          <p>
+            This website template is adapted from
+            <a href="https://nerfies.github.io/">Nerfies</a>
+            (<a href="https://github.com/nerfies/nerfies.github.io">source</a>)
+            via the CompDiffuser project page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// Map of (env-family, variant) -> materials directory name.
+const RCD_VARIANT_DIR = {
+  antmaze: {
+    medium: "antmaze_medium",
+    large: "antmaze_large",
+    giant: "antmaze_giant",
+  },
+  humanoidmaze: {
+    medium: "humanoidmaze_medium",
+    large: "humanoidmaze_large",
+    giant: "humanoidmaze_giant",
+  },
+  pointmaze: {
+    medium: "pointmaze_medium",
+    large: "pointmaze_large",
+    giant: "pointmaze_giant",
+  },
+  antsoccer: {
+    medium: "antsoccer_medium",
+    arena: "antsoccer_arena",
+  },
+  visual_antmaze: {
+    medium: "visual_antmaze_medium",
+    large: "visual_antmaze_large",
+  },
+  cube: {
+    single: "cube_single",
+    double: "cube_double",
+    triple: "cube_triple",
+    quadruple: "cube_quadruple",
+  },
+};
+
+const RCD_CACHE_BUST = String(Date.now());
+
+function rcdSetVariant(envFamily, variant) {
+  const dir = RCD_VARIANT_DIR[envFamily][variant];
+  if (!dir) return;
+  for (let i = 1; i <= 5; i++) {
+    const v = document.getElementById(envFamily + "-task" + i);
+    if (!v) continue;
+    const src = "materials/" + dir + "/task" + i + ".mp4?v=" + RCD_CACHE_BUST;
+    // Probe via fetch HEAD; if missing, show placeholder.
+    const parent = v.parentElement;
+    const placeholder = parent.querySelector(".rcd_placeholder");
+    fetch(src, { method: "HEAD" }).then((r) => {
+      if (r.ok) {
+        v.style.display = "";
+        if (placeholder) placeholder.remove();
+        const sourceTag = v.querySelector("source");
+        sourceTag.src = src;
+        v.load();
+        v.play().catch(() => {});
+      } else {
+        v.style.display = "none";
+        if (!placeholder) {
+          const ph = document.createElement("div");
+          ph.className = "rcd_placeholder";
+          ph.textContent = "TBD";
+          parent.insertBefore(ph, v);
+        }
+      }
+    });
+  }
+}
+
+// Initialize each section with its default-selected variant + mount splide carousels.
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".rcd_splide").forEach((el) => {
+    new Splide(el, {
+      type: "slide",
+      perPage: 1,
+      perMove: 1,
+      lazyLoad: "nearby",
+      pagination: true,
+      arrows: true,
+      breakpoints: { 640: { arrows: false } },
+    }).mount();
+  });
+  // Force per-env-family default variant (defeat browser form-state caching).
+  const ENV_DEFAULT_VARIANT = {
+    pointmaze: "large",
+    antmaze: "large",
+    humanoidmaze: "large",
+    antsoccer: "arena",
+    visual_antmaze: "medium",
+    cube: "single",
+  };
+  document.querySelectorAll(".rcd_variant_select_row select").forEach((sel) => {
+    const onch = sel.getAttribute("onchange") || "";
+    const m = onch.match(/rcdSetVariant\('([^']+)'/);
+    if (m) {
+      const family = m[1];
+      const def = ENV_DEFAULT_VARIANT[family];
+      if (def && [...sel.options].some(o => o.value === def)) {
+        sel.value = def;
+      }
+      rcdSetVariant(family, sel.value);
+    }
+  });
+  // Force defaults on page load (defeat browser form-state caching).
+  const toyL = document.getElementById("toy_select_L");
+  const toyLam = document.getElementById("toy_select_lam");
+  if (toyL) toyL.value = "12";
+  if (toyLam) toyLam.value = "5";
+  if (typeof toyUpdate === "function") toyUpdate();
+  const motivSel = document.getElementById("motiv_select_task");
+  if (motivSel) {
+    motivSel.value = "0";
+    if (typeof motivUpdate === "function") motivUpdate();
+  }
+});
+
+// Interactive toy comparison: swap the two panel videos based on dropdowns.
+function toyUpdate() {
+  const L = document.getElementById("toy_select_L").value;
+  const lam = document.getElementById("toy_select_lam").value;
+  const cb = Date.now();
+  function _swap(id, path) {
+    const v = document.getElementById(id);
+    if (!v) return;
+    const src = v.querySelector("source") || v.appendChild(
+      Object.assign(document.createElement("source"), { type: "video/mp4" }));
+    src.src = `${path}?v=${cb}`;
+    v.load();
+    v.play().catch(() => {});
+  }
+  _swap("toy_panel_base", `materials/toy_panels/base_L${L}.mp4`);
+  _swap("toy_panel_rcd", `materials/toy_panels/rcd_L${L}_lam${lam}.mp4`);
+}
+</script>
+
+</body>
+</html>
