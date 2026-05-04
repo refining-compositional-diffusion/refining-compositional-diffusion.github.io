@@ -182,22 +182,22 @@
       <p class="has-text-justified" style="font-size: 18px; color: #444;">
         We visualize the entire denoising process on
         <code>AntMaze-Giant-Stitch</code>: starting from pure noise, both
-        methods iteratively refine 9 overlapping local plans into a single
-        composed trajectory from start
+        methods iteratively refine multiple overlapping local plans into a
+        single composed trajectory from start
         <img src="materials/0-method/mark_start_crop.png"
              style="height: 1em; vertical-align: -0.18em;">
         to goal
         <img src="materials/0-method/mark_goal_crop.png"
              style="height: 1em; vertical-align: -0.18em;">.
-        Each task panel shows the planner's chosen plan for 20 different
-        test-time problem instances (varying start states with the same goal).
-        Plans that pass through walls are coloured
-        <b style="color:#d24d4d">red</b> (mode-averaging artifacts); plans
-        that respect the maze are coloured <b style="color:#2ca25f">green</b>.
-        CompDiffuser frequently produces mode-averaged trajectories in
-        low-density regions, leaving plans that cut through walls, while
-        <b class="rcd_brand">RCD</b> steers each denoising step toward
-        high-density modes and recovers globally coherent paths.
+        Each task panel shows 20 sampled plans for the corresponding
+        test-time task. Plans that violate environment constraints
+        (wall penetration) are coloured
+        <b style="color:#d24d4d">red</b>; feasible plans are coloured
+        <b style="color:#2ca25f">green</b>. CompDiffuser frequently produces
+        mode-averaged trajectories in low-density regions, leaving plans
+        that cut through walls, while <b class="rcd_brand">RCD</b> steers
+        each denoising step toward high-density modes and recovers globally
+        coherent paths.
       </p>
 
       <div style="text-align: center; margin-top: 12px;">
@@ -323,25 +323,14 @@ function motivUpdate() {
       <div class="columns is-vcentered" style="margin-top: 8px;">
         <div class="column is-half">
           <p class="has-text-justified" style="font-size: 18px; color: #444;">
-            We construct a controlled $L$-position toy task whose underlying
-            distribution is anchored at the two endpoints
-            ($x_1\!=\!0$, $x_L\!=\!0$) and bimodal at the interior positions
-            (modes at $+1$ and $-1$). <b>The training data contains only short
-            length-$3$ chunks; no full long-horizon trajectory is ever
-            seen.</b> At test time, the planner must compose these short chunks
-            into a long-horizon trajectory without averaging across the two
-            incompatible interior modes.
-          </p>
-          <p class="has-text-justified" style="font-size: 18px; color: #444; margin-top: 14px;">
-            Three chunk types appear in the training data:
-            <b style="color:#7e95c9;">start</b> chunks run from $x_1\!=\!0$
-            to either the $+1$ or $-1$ interior mode;
-            <b style="color:#3aa05a;">overlap</b> (bridge) chunks preserve a
-            single interior mode through three consecutive positions; and
-            <b style="color:#d24d4d;">end</b> chunks land back at
-            $x_L\!=\!0$ from a single interior mode. Crucially, no individual
-            chunk ever crosses modes; mode-coherence across the full
-            trajectory has to emerge from the compositional planner.
+            The training data consists of overlapping length-$3$ segments,
+            each shown in a distinct color. They are anchored at a fixed
+            start ($x_1\!=\!0$) and goal ($x_L\!=\!0$), and pass through a
+            bimodal distribution with modes at $+1$ and $-1$ at the interior
+            positions. <b>No full long-horizon trajectory is ever seen during
+            training.</b> At test time, the planner must compose these short
+            segments into a long-horizon trajectory without averaging across
+            the two incompatible interior modes.
           </p>
         </div>
         <div class="column is-half has-text-centered">
